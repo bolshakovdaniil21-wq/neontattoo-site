@@ -111,8 +111,8 @@ p{ margin: 0 0 1em; }
 
 /* ============ Header ============ */
 .site-header{
-  position: fixed;
-  top: 0; left: 0; right: 0;
+  position: sticky;
+  top: 0;
   z-index: 100;
   background: rgba(253, 249, 246, 0);
   transition: background .4s var(--ease), box-shadow .4s var(--ease);
@@ -212,7 +212,7 @@ p{ margin: 0 0 1em; }
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 140px 0 4rem;
+  padding: 64px 0 4rem;
   background: var(--cream);
   overflow: hidden;
 }
@@ -760,7 +760,7 @@ p{ margin: 0 0 1em; }
   .contact-grid{ grid-template-columns: repeat(2, 1fr); }
   .footer-inner{ grid-template-columns: 1fr; text-align: center; }
   .footer-contacts{ text-align: center; }
-  .hero{ padding: 130px 0 4rem; }
+  .hero{ padding: 54px 0 4rem; }
   .hero-content{ max-width: 90%; margin: 0 auto; }
   .hero-bg-word{ font-size: 30vw; }
 }
@@ -796,7 +796,7 @@ p{ margin: 0 0 1em; }
 }
 
 @media (max-width: 600px){
-  .hero{ padding: 140px 0 4rem; }
+  .hero{ padding: 64px 0 4rem; }
   .section{ padding: 5.5rem 0; }
   .contact-grid{ grid-template-columns: 1fr; }
   .hcarousel-item{ width: 88vw; }
