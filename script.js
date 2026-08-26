@@ -24,6 +24,7 @@ mainNav.querySelectorAll('a').forEach(link => {
 });
 
 // Portfolio carousels
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 document.querySelectorAll('.hcarousel').forEach(carousel => {
   const track = carousel.querySelector('.hcarousel-track');
   const prev = carousel.querySelector('.hcarousel-arrow.prev');
@@ -35,6 +36,35 @@ document.querySelectorAll('.hcarousel').forEach(carousel => {
   };
   prev.addEventListener('click', () => scrollByCard(-1));
   next.addEventListener('click', () => scrollByCard(1));
+
+  // Gentle autoplay: nudge forward every few seconds, loop, pause on interaction
+  if (!prefersReducedMotion) {
+    let autoTimer = null;
+    let resumeTimer = null;
+    const stopAuto = () => { clearInterval(autoTimer); autoTimer = null; };
+    const startAuto = () => {
+      stopAuto();
+      autoTimer = setInterval(() => {
+        const maxScroll = track.scrollWidth - track.clientWidth - 4;
+        if (maxScroll <= 0) return;
+        if (track.scrollLeft >= maxScroll) {
+          track.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+          scrollByCard(1);
+        }
+      }, 4200);
+    };
+    const pauseThenResume = () => {
+      stopAuto();
+      clearTimeout(resumeTimer);
+      resumeTimer = setTimeout(startAuto, 6000);
+    };
+    carousel.addEventListener('mouseenter', stopAuto);
+    carousel.addEventListener('mouseleave', startAuto);
+    carousel.addEventListener('touchstart', pauseThenResume, { passive: true });
+    carousel.addEventListener('pointerdown', pauseThenResume);
+    startAuto();
+  }
 });
 
 // Lightbox for story carousels (each group cycles independently)
