@@ -445,6 +445,26 @@ p{ margin: 0 0 1em; }
 .hcarousel{ position: relative; }
 #works .section-head h2{ font-size: clamp(1.8rem, 3.2vw, 2.5rem); margin-bottom: 1.2rem; }
 .story-carousel{ max-width: 1240px; margin: 0 auto; }
+.works-sub-head{
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin: 2.6rem 0 1.2rem;
+  color: var(--ink);
+}
+.work-photo-carousel{ max-width: 1240px; margin: 0 auto; }
+.hcarousel-item.work-photo-item{
+  width: 260px;
+  aspect-ratio: 3 / 4;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+}
+.work-photo-item img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 .hcarousel-item.story-item{
   width: 290px;
   aspect-ratio: 3 / 4;
