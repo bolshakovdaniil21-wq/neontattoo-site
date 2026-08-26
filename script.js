@@ -37,8 +37,8 @@ document.querySelectorAll('.hcarousel').forEach(carousel => {
   prev.addEventListener('click', () => scrollByCard(-1));
   next.addEventListener('click', () => scrollByCard(1));
 
-  // Gentle autoplay: nudge forward every few seconds, loop, pause on interaction
-  if (!prefersReducedMotion) {
+  // Gentle autoplay: only on the portfolio photo gallery, nudge forward, loop, pause on interaction
+  if (!prefersReducedMotion && carousel.classList.contains('work-photo-carousel')) {
     let autoTimer = null;
     let resumeTimer = null;
     const stopAuto = () => { clearInterval(autoTimer); autoTimer = null; };
