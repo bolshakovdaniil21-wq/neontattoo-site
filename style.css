@@ -425,18 +425,6 @@ p{ margin: 0 0 1em; }
 .master-bio p{ margin: 0 0 .85rem; font-size: 1rem; line-height: 1.6; color: var(--ink-soft); }
 .master-bio p:last-child{ margin-bottom: 0; }
 
-.master-list{
-  display: flex;
-  flex-direction: column;
-  gap: .6rem;
-  margin-top: 1.8rem;
-  padding: 1.1rem 1.3rem;
-  background: var(--white);
-  border-radius: var(--radius-sm);
-  box-shadow: var(--shadow-soft);
-}
-.master-list p{ margin: 0; font-size: .92rem; font-weight: 500; color: var(--ink); line-height: 1.5; }
-
 .badges{
   display: flex;
   flex-direction: column;
@@ -447,14 +435,25 @@ p{ margin: 0 0 1em; }
   display: flex;
   align-items: center;
   gap: .9rem;
-  padding: .9rem 1.1rem;
+  padding: .8rem 1.1rem;
   background: var(--white);
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-md);
   box-shadow: var(--shadow-soft);
   font-size: .92rem;
   font-weight: 500;
+  line-height: 1.4;
 }
-.badge svg{ width: 22px; height: 22px; flex-shrink: 0; color: var(--wine); }
+.badge-icon{
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--beige);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.badge-icon svg{ width: 18px; height: 18px; color: var(--wine); }
 
 /* ============ Portfolio (story carousel) ============ */
 #works{ padding: 4rem 0; }
