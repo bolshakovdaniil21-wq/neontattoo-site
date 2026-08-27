@@ -421,6 +421,22 @@ p{ margin: 0 0 1em; }
 .master-text .lead{ font-size: 1.4rem; color: var(--ink); font-weight: 600; font-style: italic; }
 .master-text .body{ font-size: 1rem; color: var(--ink-soft); }
 
+.master-bio{ margin-top: 1.6rem; }
+.master-bio p{ margin: 0 0 .85rem; font-size: 1rem; line-height: 1.6; color: var(--ink-soft); }
+.master-bio p:last-child{ margin-bottom: 0; }
+
+.master-list{
+  display: flex;
+  flex-direction: column;
+  gap: .6rem;
+  margin-top: 1.8rem;
+  padding: 1.1rem 1.3rem;
+  background: var(--white);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-soft);
+}
+.master-list p{ margin: 0; font-size: .92rem; font-weight: 500; color: var(--ink); line-height: 1.5; }
+
 .badges{
   display: flex;
   flex-direction: column;
