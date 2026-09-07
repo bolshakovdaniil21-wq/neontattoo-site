@@ -383,14 +383,17 @@ p{ margin: 0 0 1em; }
 .ph-icon.play{ width: 40px; height: 40px; }
 
 /* ============ Master ============ */
-.master{ position: relative; overflow: hidden; min-height: 100vh; min-height: 100dvh; display: flex; background: var(--beige); }
+.master{ position: relative; overflow: hidden; min-height: 100vh; min-height: 100dvh; display: block; background: var(--beige); }
 .master-grid{
   display: grid;
   grid-template-columns: 0.8fr 1.2fr;
   width: 100%;
-  align-items: stretch;
+  align-items: start;
 }
 .master-photo{ position: relative; min-height: 480px; padding: 20px; box-sizing: border-box; }
+@media (min-width: 981px){
+  .master-photo{ aspect-ratio: 3 / 4; min-height: 0; }
+}
 .master-photo .img-placeholder{
   height: 100%;
   border-radius: var(--radius-lg);
@@ -426,13 +429,14 @@ p{ margin: 0 0 1em; }
 .master-bio p{ margin: 0 0 .85rem; font-size: 1rem; line-height: 1.6; color: var(--ink-soft); }
 .master-bio p:last-child{ margin-bottom: 0; }
 
+.master-extra{ padding: 0 5.5rem 6rem; }
 .master-list-label{
   font-size: .78rem;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: .08em;
   color: var(--wine);
-  margin: 2.2rem 0 .9rem;
+  margin: 0 0 .9rem;
 }
 .badges{
   display: flex;
@@ -440,10 +444,10 @@ p{ margin: 0 0 1em; }
   gap: 1rem;
   margin-top: 2rem;
 }
-.badges-why{ margin-top: 0; }
+.master-extra .badges{ margin-top: 0; }
 .badge{
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: .9rem;
   padding: .8rem 1.1rem;
   background: var(--white);
@@ -453,9 +457,14 @@ p{ margin: 0 0 1em; }
   font-weight: 500;
   line-height: 1.4;
 }
-.badges-why .badge{ align-items: flex-start; }
-.badges-why .badge-icon{ margin-top: .1rem; }
 .badge strong{ color: var(--ink); font-weight: 700; }
+@media (min-width: 981px){
+  .master-extra .badges{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
 .badge-icon{
   width: 36px;
   height: 36px;
@@ -465,6 +474,7 @@ p{ margin: 0 0 1em; }
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  margin-top: .1rem;
 }
 .badge-icon svg{ width: 18px; height: 18px; color: var(--wine); }
 
@@ -860,6 +870,7 @@ p{ margin: 0 0 1em; }
   .studio-grid{ grid-template-columns: 1fr; gap: 3rem; }
   .master-photo{ min-height: 320px; }
   .master-text{ padding: 3.5rem 1.75rem; }
+  .master-extra{ padding: 0 1.75rem 3.5rem; }
   .pricing-split{ grid-template-columns: 1fr; gap: 3rem; }
   .contact-grid{ grid-template-columns: repeat(2, 1fr); }
   .footer-inner{ grid-template-columns: 1fr; text-align: center; }
