@@ -417,7 +417,8 @@ p{ margin: 0 0 1em; }
   box-shadow: var(--shadow-soft);
 }
 .master-text{ padding: 6rem 5.5rem; display: flex; flex-direction: column; justify-content: center; }
-.master-text h2{ font-size: clamp(1.9rem, 3.2vw, 2.7rem); }
+.master-text h2{ font-size: clamp(1.9rem, 3.2vw, 2.7rem); display: flex; align-items: center; gap: .5rem; flex-wrap: wrap; }
+.heart-icon{ width: .68em; height: .68em; color: var(--wine); flex-shrink: 0; }
 .master-text .lead{ font-size: 1.4rem; color: var(--ink); font-weight: 600; font-style: italic; }
 .master-text .body{ font-size: 1rem; color: var(--ink-soft); }
 
@@ -425,12 +426,21 @@ p{ margin: 0 0 1em; }
 .master-bio p{ margin: 0 0 .85rem; font-size: 1rem; line-height: 1.6; color: var(--ink-soft); }
 .master-bio p:last-child{ margin-bottom: 0; }
 
+.master-list-label{
+  font-size: .78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--wine);
+  margin: 2.2rem 0 .9rem;
+}
 .badges{
   display: flex;
   flex-direction: column;
   gap: 1rem;
   margin-top: 2rem;
 }
+.badges-why{ margin-top: 0; }
 .badge{
   display: flex;
   align-items: center;
@@ -443,6 +453,9 @@ p{ margin: 0 0 1em; }
   font-weight: 500;
   line-height: 1.4;
 }
+.badges-why .badge{ align-items: flex-start; }
+.badges-why .badge-icon{ margin-top: .1rem; }
+.badge strong{ color: var(--ink); font-weight: 700; }
 .badge-icon{
   width: 36px;
   height: 36px;
@@ -595,6 +608,64 @@ p{ margin: 0 0 1em; }
 .pricing-col .hcarousel-arrow.next{ right: -10px; }
 
 /* ============ Booking / contact ============ */
+.pricing-note{
+  max-width: 640px;
+  margin: 0 auto 3rem;
+  padding: 2rem 2.2rem;
+  background: rgba(253,249,246,.07);
+  border: 1.5px solid rgba(253,249,246,.16);
+  border-radius: var(--radius-md);
+  text-align: center;
+}
+.pricing-note-label{
+  font-size: .78rem;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--terracotta);
+  font-weight: 800;
+  margin: 0 0 .6rem;
+}
+.pricing-note-amount{
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--cream);
+  margin: 0 0 .7rem;
+}
+.pricing-note-text{
+  font-size: .98rem;
+  color: rgba(253,249,246,.8);
+  margin: 0 0 1.4rem;
+  line-height: 1.55;
+}
+.pricing-note-includes-title{
+  font-size: .85rem;
+  font-weight: 700;
+  color: var(--cream);
+  margin: 0 0 .7rem;
+}
+.pricing-note-list{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+.pricing-note-list li{
+  font-size: .92rem;
+  color: rgba(253,249,246,.85);
+  position: relative;
+  padding-left: 1.3rem;
+}
+.pricing-note-list li::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: .5em;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--terracotta);
+}
 .contact-grid{
   display: grid;
   grid-template-columns: repeat(4, 1fr);
