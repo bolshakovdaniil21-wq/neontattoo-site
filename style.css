@@ -635,12 +635,6 @@ p{ margin: 0 0 1em; }
   font-weight: 800;
   margin: 0 0 .6rem;
 }
-.pricing-note-amount{
-  font-size: 2rem;
-  font-weight: 700;
-  color: var(--cream);
-  margin: 0 0 .7rem;
-}
 .pricing-note-text{
   font-size: .98rem;
   color: rgba(253,249,246,.8);
