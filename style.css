@@ -151,14 +151,16 @@ p{ margin: 0 0 1em; }
 /* ============ Hero ============ */
 .hero{
   position: relative;
-  min-height: 82vh;
-  min-height: 82dvh;
+  min-height: calc(100vh - 76px - 80px);
+  min-height: calc(100dvh - 76px - 80px);
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 40px 0 3rem;
   background: var(--cream);
   overflow: hidden;
+  -webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - 48px), transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 calc(100% - 48px), transparent 100%);
 }
 .hero::before{
   content: '';
@@ -186,7 +188,7 @@ p{ margin: 0 0 1em; }
   position: absolute;
   z-index: 0;
   left: -2%;
-  bottom: 0;
+  bottom: 36px;
   font-family: var(--font-display);
   font-style: italic;
   font-size: 17vw;
@@ -861,6 +863,7 @@ p{ margin: 0 0 1em; }
   .hcarousel-item{ width: 320px; }
   .hcarousel-item.story-item{ width: 320px; }
   .wave-strip{ height: 48px; }
+  .hero{ min-height: calc(100vh - 76px - 48px); min-height: calc(100dvh - 76px - 48px); }
 }
 
 @media (max-width: 600px){
@@ -882,4 +885,5 @@ p{ margin: 0 0 1em; }
   .pricing-split{ padding-left: 24px; padding-right: 24px; }
   .hero-bg-word{ font-size: 34vw; }
   .wave-strip{ height: 32px; }
+  .hero{ min-height: calc(100vh - 76px - 32px); min-height: calc(100dvh - 76px - 32px); }
 }
