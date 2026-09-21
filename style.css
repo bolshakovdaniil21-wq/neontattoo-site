@@ -151,12 +151,12 @@ p{ margin: 0 0 1em; }
 /* ============ Hero ============ */
 .hero{
   position: relative;
-  min-height: 100vh;
-  min-height: 100dvh;
+  min-height: 82vh;
+  min-height: 82dvh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 64px 0 4rem;
+  padding: 40px 0 3rem;
   background: var(--cream);
   overflow: hidden;
 }
@@ -186,7 +186,7 @@ p{ margin: 0 0 1em; }
   position: absolute;
   z-index: 0;
   left: -2%;
-  bottom: -4%;
+  bottom: 0;
   font-family: var(--font-display);
   font-style: italic;
   font-size: 17vw;
