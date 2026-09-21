@@ -542,9 +542,8 @@ p{ margin: 0 0 1em; }
 /* ============ Booking / contact ============ */
 .info-grid{
   display: grid;
-  grid-template-columns: 1.25fr 1fr;
-  gap: 1.4rem;
-  margin-bottom: 1.4rem;
+  max-width: 640px;
+  margin: 0 auto 1.4rem;
 }
 .info-card{
   padding: 1.9rem 2rem;
@@ -851,7 +850,6 @@ p{ margin: 0 0 1em; }
   .master-extra{ padding: 0 1.75rem 3.5rem; }
   .pricing-split{ grid-template-columns: 1fr; gap: 3rem; }
   .contact-grid{ grid-template-columns: repeat(2, 1fr); }
-  .info-grid{ grid-template-columns: 1fr; }
   .footer-inner{ grid-template-columns: 1fr; text-align: center; }
   .footer-contacts{ text-align: center; }
   .hero{ padding: 54px 0 4rem; }
